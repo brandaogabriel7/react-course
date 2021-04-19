@@ -4,9 +4,9 @@ import Todo from './components/Todo/Todo';
 const App = () => {
   const [todos, setTodos] = useState(['First Todo', 'Second Todo', 'Third Todo']);
 
-  const deleteTodoHandler = (deletedIndex) => {
+  const deleteTodoConfirmedHandler = (deletedTodoIndex) => {
     const allTodos = [...todos];
-    allTodos.splice(deletedIndex, 1);
+    allTodos.splice(deletedTodoIndex, 1);
     setTodos(allTodos);
   };
 
@@ -14,7 +14,7 @@ const App = () => {
     <div>
       <h1>My Todos</h1>
       {todos.map((todo, index) => (
-        <Todo key={index} text={todo} deleted={() => deleteTodoHandler(index)} />
+        <Todo key={index} text={todo} deleted={() => deleteTodoConfirmedHandler(index)} />
       ))}
     </div>
   );
