@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router';
+import MainNavigation from './components/Layout/MainNavigation/MainNavigation';
 import AllMeetups from './pages/AllMeetups/AllMeetups';
 import Favorites from './pages/Favorites/Favorites';
 import NewMeetup from './pages/NewMeetup/NewMeetup';
@@ -6,6 +7,7 @@ import NewMeetup from './pages/NewMeetup/NewMeetup';
 const App = () => {
   return (
     <div>
+      <MainNavigation />
       <Switch>
         <Route exact path="/meetups">
           <AllMeetups />
