@@ -1,14 +1,14 @@
-import { Route, Switch } from 'react-router';
-import MainNavigation from './components/Layout/MainNavigation/MainNavigation';
+import { Redirect, Route, Switch } from 'react-router';
+import Layout from './components/Layout/Layout';
 import AllMeetups from './pages/AllMeetups/AllMeetups';
 import Favorites from './pages/Favorites/Favorites';
 import NewMeetup from './pages/NewMeetup/NewMeetup';
 
 const App = () => {
   return (
-    <div>
-      <MainNavigation />
+    <Layout>
       <Switch>
+        <Redirect exact from="/" to="/meetups" />
         <Route exact path="/meetups">
           <AllMeetups />
         </Route>
@@ -19,7 +19,7 @@ const App = () => {
           <Favorites />
         </Route>
       </Switch>
-    </div>
+    </Layout>
   );
 };
 
