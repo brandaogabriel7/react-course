@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import Todo from './components/Todo/Todo';
+import Todo from '../Todo/Todo';
+import './TodoList.css';
 
 const TodoList = () => {
     const [todos, setTodos] = useState(['First Todo', 'Second Todo', 'Third Todo']);
