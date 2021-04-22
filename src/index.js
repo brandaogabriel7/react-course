@@ -2,10 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { FavoritesContextProvider } from './contexts/favorites-context';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <FavoritesContextProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </FavoritesContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
