@@ -5,12 +5,14 @@ import NewMeetupForm from '../../components/Meetups/NewMeetupForm/NewMeetupForm'
 const NewMeetup = () => {
     const history = useHistory();
 
-    const addNewMeetupHandler = (meetupData) => {
-        meetupsApi.post('/meetups.json', meetupData)
-            .then(_ => {
-                history.replace("/meetups");
-            })
-            .catch(err => console.error(err));
+    const addNewMeetupHandler = async (meetupData) => {
+        try {
+            await meetupsApi.submitNewMeetup(meetupData);
+            history.replace("/meetups");
+        }
+        catch (err) {
+            console.error(err);
+        }
     };
 
     return (

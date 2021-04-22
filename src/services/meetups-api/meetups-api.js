@@ -6,4 +6,9 @@ const instance = axios.create({
     baseURL: MEETUPS_API_BASE_URL
 });
 
-export default instance;
+const meetupsApi = {
+    getMeetups: () => instance.get('/meetups.json'),
+    submitNewMeetup: (newMeetup) => instance.post('/meetups.json', newMeetup)
+};
+
+export default meetupsApi;
