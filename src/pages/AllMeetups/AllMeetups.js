@@ -9,10 +9,7 @@ const AllMeetups = () => {
     useEffect(() => {
         meetupsApi.getMeetups()
             .then(res => {
-                const meetupsArray = Object.keys(res.data).map(id => {
-                    res.data[id].id = id;
-                    return res.data[id];
-                });
+                const meetupsArray = Object.keys(res.data).map(id => ({ id, ...res.data[id] }));
                 setMeetups(meetupsArray);
                 setIsLoading(false);
             })
