@@ -25,7 +25,7 @@ const AllMeetups = () => {
         {
             !isLoading
                 ? <MeetupList meetups={meetups} />
-                : <p>Loading...</p>
+                : <section><p>Loading...</p></section>
         }
     </div>);
 };
